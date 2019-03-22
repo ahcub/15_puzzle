@@ -26,7 +26,7 @@ def game():
 
 def print_game_field(game_field):
     for i in range(0, 16, 4):
-        print(' '.join(f'{el:2d}' if el != 16 else '  ' for el in game_field[i:i+4]))
+        print(' '.join('{:2d}'.format(el) if el != 16 else '  ' for el in game_field[i:i+4]))
 
 
 def check_if_move_is_valid(tile_x, tile_y, empty_tile_x, empty_tile_y):
