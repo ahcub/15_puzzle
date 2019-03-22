@@ -17,7 +17,7 @@ def game():
             if tile < 1 or tile > 16:
                 raise ValueError('invalid value range')
         except ValueError:
-            print('please input numbers from 1 to 15')
+            print('\nplease input numbers from 1 to 15\n')
             continue
         tile_x, tile_y, tile_pos = tiles_pos_map[tile]
         empty_tile_x, empty_tile_y, empty_tile_pos = tiles_pos_map[EMPTY_TILE]
