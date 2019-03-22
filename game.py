@@ -14,7 +14,7 @@ def game():
         print_game_field(game_field)
         try:
             tile = int(input('enter tile number to move: '))
-            if tile < 1 or tile > 16:
+            if tile < 1 or tile > 15:
                 raise ValueError('invalid value range')
         except ValueError:
             print('\nplease input numbers from 1 to 15\n')
