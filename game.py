@@ -12,14 +12,20 @@ def game():
     tiles_pos_map = {tile: (i // 4, i % 4, i) for i, tile in enumerate(game_field)}
     while game_field != DESIRED_ARRAY:
         print_game_field(game_field)
-        tile = int(input('enter tile number to move: '))
+        try:
+            tile = int(input('enter tile number to move: '))
+            if tile < 1 or tile > 16:
+                raise ValueError('invalid value range')
+        except ValueError:
+            print('please input numbers from 1 to 15')
+            continue
         tile_x, tile_y, tile_pos = tiles_pos_map[tile]
         empty_tile_x, empty_tile_y, empty_tile_pos = tiles_pos_map[EMPTY_TILE]
         if check_if_move_is_valid(tile_x, tile_y, empty_tile_x, empty_tile_y):
             tiles_pos_map[tile], tiles_pos_map[EMPTY_TILE] = tiles_pos_map[EMPTY_TILE], tiles_pos_map[tile]
             game_field[tile_pos], game_field[empty_tile_pos] = game_field[empty_tile_pos], game_field[tile_pos]
         else:
-            print('\ninvalid move, please use a different tile number')
+            print('\ninvalid move, please use a different tile number\n')
     print('CONGRATULATIONS!\nThe tiles are ordered!')
     print_game_field(game_field)
 
