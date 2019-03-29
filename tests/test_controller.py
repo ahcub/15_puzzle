@@ -1,6 +1,7 @@
 import pytest
 
-from game import check_if_move_is_valid
+from fifteen_puzzle.controller import GameController
+from fifteen_puzzle.fifteen_puzzle import check_if_move_is_valid
 
 
 @pytest.mark.parametrize("test_input,expected", [
@@ -13,3 +14,7 @@ from game import check_if_move_is_valid
 ])
 def test_check_if_move_is_valid(test_input, expected):
     assert check_if_move_is_valid(*test_input) == expected
+
+
+def test_move_is_valid():
+    game_contorller = GameController()
