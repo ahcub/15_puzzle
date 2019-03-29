@@ -1,7 +1,7 @@
 from fifteen_puzzle.constants import END_TILE_NUM, GAME_FIELD_WIDTH, EMPTY_TILE_NUM
 
 
-class ConsoleIO:
+class GameIO:
     def __init__(self, input_reader, output_writer):
         self.input_reader = input_reader
         self.output_writer = output_writer

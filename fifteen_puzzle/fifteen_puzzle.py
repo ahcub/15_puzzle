@@ -1,4 +1,4 @@
-from fifteen_puzzle.console_io import ConsoleIO
+from fifteen_puzzle.game_io import GameIO
 from fifteen_puzzle.constants import (SORTED_TILES_ARRAY, INVALID_TILE_NUMBER, START_TILE_NUM,
                                       END_TILE_NUM)
 from fifteen_puzzle.controller import GameController
@@ -6,7 +6,7 @@ from fifteen_puzzle.controller import GameController
 
 class FifteenPuzzle:
     def __init__(self):
-        self.io = ConsoleIO(input, print)
+        self.io = GameIO(input, print)
         self.gc = GameController(self.io)
 
     def play(self):
