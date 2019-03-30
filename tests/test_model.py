@@ -3,7 +3,6 @@ import pytest
 from fifteen_puzzle.model import Model
 
 
-
 @pytest.mark.parametrize('test_input,expected', [
     ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], True),
     ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 15], False),
