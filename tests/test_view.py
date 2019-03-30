@@ -10,6 +10,8 @@ def test_write_message():
     assert io.getvalue() == 'test_message1'
     view.write_message('test_message2')
     assert io.getvalue() == 'test_message1test_message2'
+    view.write_message('test_message3 {}, {}', 'arg1', 'arg2')
+    assert io.getvalue() == 'test_message1test_message2test_message3 arg1, arg2'
 
 
 def test_print_error():

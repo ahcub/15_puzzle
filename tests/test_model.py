@@ -1,6 +1,12 @@
 import pytest
 
+from fifteen_puzzle.constants import SORTED_TILES_ARRAY
 from fifteen_puzzle.model import Model
+
+
+def test_model_init():
+    m = Model()
+    assert m.game_field != SORTED_TILES_ARRAY
 
 
 @pytest.mark.parametrize('test_input,expected', [
