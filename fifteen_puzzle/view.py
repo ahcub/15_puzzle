@@ -2,7 +2,8 @@ from fifteen_puzzle.constants import END_TILE_NUM, GAME_FIELD_WIDTH, EMPTY_TILE_
 
 
 class View:
-    def __init__(self, output_writer):
+    def __init__(self, input_reader, output_writer):
+        self.input_reader = input_reader
         self.output_writer = output_writer
 
     def print_game_field(self, game_field):
@@ -24,3 +25,6 @@ class View:
 
     def print_error(self, error_message, *args):
         self.write_message('\n{}\n'.format(error_message), *args)
+
+    def read_user_input(self, additional_message=''):
+        return self.input_reader(additional_message)

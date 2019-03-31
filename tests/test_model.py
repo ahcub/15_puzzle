@@ -52,7 +52,7 @@ def test_move_tile(mocker):
     }
 
     expected_tiles_pos = {1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9,
-                          11: 14, 12: 11, 13: 12, 14: 13, 15: 15, 16:10}
+                          11: 14, 12: 11, 13: 12, 14: 13, 15: 15, 16: 10}
 
     assert m.game_field == expected_game_field
     assert m.tiles_rows_cols_map == expected_rows_col_map
